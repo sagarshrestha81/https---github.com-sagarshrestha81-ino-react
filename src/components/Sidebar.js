@@ -8,6 +8,7 @@ export default function Sidebar() {
             <Link to="/profile">Profile</Link>
             <Link to="/about">about</Link>
             <Link to="/contact">Contact</Link>
+            <Link to="/blog">Blog</Link>
         </nav>
     )
 

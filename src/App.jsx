@@ -9,6 +9,7 @@ import "bootstrap/dist/js/bootstrap";
 
 
 import Profile from './pages/Profile';
+import Blog from './pages/Blog';
 function App() {
   return (
     <>
@@ -20,6 +21,7 @@ function App() {
           <Route path="/contact" element={<Contact />}/>
           <Route path="/about" element={<AboutPage />}/>       
           <Route path="/profile" element={<Profile />}/>       
+          <Route path="/blog" element={<Blog />}/>       
           
           
         </Routes>
