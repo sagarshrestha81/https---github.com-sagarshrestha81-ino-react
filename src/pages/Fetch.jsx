@@ -12,7 +12,12 @@ export default function Fetch() {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+
+          if(data.status =="success"){
+            console.log(data);
+            setListDog(data.message);
+
+        }
       })
       .catch((error) => {
         console.log(error);
@@ -26,6 +31,16 @@ export default function Fetch() {
   return (
     <>
       <h1>Fetch</h1>
+
+        {
+            Object.keys(listDog).map((item,idx)=>{
+                return(
+                    <p>{item}</p>
+                )
+            })
+        }
+
+
     </>
   );
 }
