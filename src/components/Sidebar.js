@@ -11,6 +11,8 @@ export default function Sidebar() {
             <Link to="/blog">Blog</Link>
             <Link to="/hook">Hook</Link>
             <Link to="/fetch">Fetch</Link>
+            <Link to="/axios">Axios</Link>
+            <Link to="/students">Students</Link>
         </nav>
     )
 

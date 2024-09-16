@@ -14,6 +14,8 @@ import BlogDetail from './pages/BlogDetail';
 import Hook from './pages/Hook';
 import PageNotfound from './pages/PageNotFound';
 import Fetch from './pages/Fetch';
+import AxiosApi from './pages/AxiosApi';
+import ListStudent from './pages/students/ListStudent';
 function App() {
   return (
     <>
@@ -29,6 +31,8 @@ function App() {
           <Route path="/blog/detail/:id/:classes" element={<BlogDetail />}/>        
           <Route path="/hook" element={<Hook />}/>       
           <Route path="/fetch" element={<Fetch />}/>       
+          <Route path="/axios" element={<AxiosApi />}/>       
+          <Route path="/students" element={<ListStudent />}/>       
           <Route path="*" element={<PageNotfound />}/>       
           
           
