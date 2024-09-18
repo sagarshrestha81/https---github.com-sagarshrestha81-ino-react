@@ -1,4 +1,5 @@
 import { useState,useEffect } from 'react';
+import axios from "axios";
 export default function CreateStudent() {
 
     const [formData, setFormData ]= 
@@ -11,6 +12,29 @@ export default function CreateStudent() {
     const handleSubmit =(e)=>{
         e.preventDefault();
         console.log(formData)
+let data = JSON.stringify({
+  "data": formData
+});
+
+let config = {
+  method: 'post',
+  url: 'http://localhost:1337/api/students',
+  headers: { 
+    'Content-Type': 'application/json', 
+    'Authorization': '89704e9618f3e1a7816c2042db931eb49612a40e5ac28c037d80d4ca6ddfa442229b719e3f1bb2dda49e8ee1bbbf88cc7bbea4bb86bbe06dda4d8f715d5c0f872512b6710455a1d81b69c944d174e5af64d710b18de793f14d0ab39b582897f2622abef621d1cf6b3b4ebd4dfd47607c4b0b465ee8679b5b3658c6dcf23bd2f6'
+  },
+  data : data
+};
+
+axios.request(config)
+.then((response) => {
+  console.log(JSON.stringify(response.data));
+})
+.catch((error) => {
+  console.log(error);
+});
+
+
     }
 
 
