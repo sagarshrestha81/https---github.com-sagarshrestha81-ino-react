@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import { Link } from 'react-router-dom';
 import { MdOutlineRemoveRedEye,MdDelete } from "react-icons/md";
 import { CiEdit } from "react-icons/ci";
+import { FaPlus } from "react-icons/fa6";
 import { getData } from "./../api/AxiosRequest";
 
 
@@ -21,11 +22,16 @@ export default function ListStudent() {
   }, []);
 
   return (
-    <div className="container">
+    <div className="container pt-4">
     <div className="row">
     <div className="col-12">
-      <h1>list student</h1>
+    <div className="d-flex justify-content-between">
+    <h1>List Student</h1>
 
+<Link to="/create-student" className="btn btn-info d-flex align-items-center">
+<FaPlus /> New Student </Link>
+
+    </div>
       <table class="table">
         <thead class="thead-dark">
           <tr>

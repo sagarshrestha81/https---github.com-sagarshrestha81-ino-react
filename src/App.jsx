@@ -17,6 +17,7 @@ import Fetch from './pages/Fetch';
 import AxiosApi from './pages/AxiosApi';
 import ListStudent from './pages/students/ListStudent';
 import SingleStudent from './pages/students/SingleStudent';
+import CreateStudent from './pages/students/CreateStudent';
 function App() {
   return (
     <>
@@ -35,6 +36,7 @@ function App() {
           <Route path="/axios" element={<AxiosApi />}/>       
           <Route path="/students" element={<ListStudent />}/>       
           <Route path="/student/:id" element={<SingleStudent />}/>       
+          <Route path="/create-student" element={<CreateStudent />}/>       
           <Route path="*" element={<PageNotfound />}/>       
           
           
