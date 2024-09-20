@@ -18,6 +18,7 @@ import AxiosApi from './pages/AxiosApi';
 import ListStudent from './pages/students/ListStudent';
 import SingleStudent from './pages/students/SingleStudent';
 import CreateStudent from './pages/students/CreateStudent';
+import EditStudent from "./pages/students/EditStudent";
 function App() {
   return (
     <>
@@ -37,6 +38,7 @@ function App() {
           <Route path="/students" element={<ListStudent />}/>       
           <Route path="/student/:id" element={<SingleStudent />}/>       
           <Route path="/create-student" element={<CreateStudent />}/>       
+          <Route path="/student-edit/:id" element={<EditStudent />}/>       
           <Route path="*" element={<PageNotfound />}/>       
           
           

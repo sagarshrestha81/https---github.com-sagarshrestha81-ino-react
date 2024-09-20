@@ -3,6 +3,7 @@ import axios from "axios";
 import { createData } from "./../api/AxiosRequest";
 import Swal from 'sweetalert2';
 export default function CreateStudent() {
+
   const [formData, setFormData] = useState({
     student_name: "",
     student_class: "",
@@ -34,10 +35,15 @@ export default function CreateStudent() {
           showConfirmButton: false,
           timer: 1500
         });
+        
+        setFormData({
+          student_name: "",
+          student_class: "",
+          student_roll: "",
+        });
+    
 
     }
-
-
 
 
   };
