@@ -1,50 +1,43 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import { createData } from "./../api/AxiosRequest";
+import { createData, getData } from "./../api/AxiosRequest";
 import Swal from 'sweetalert2';
 import { Link } from "react-router-dom";
 export default function SignIn() {
 
   const [formData, setFormData] = useState({
-    student_name: "",
-    student_class: "",
-    student_roll: "",
+    student_email: "",
+    student_password: "",
   });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(formData);
 
+    if(formData.student_email !== ""  && formData.student_password !== "") {
+      const data = 
+      await getData(`students?filters[student_email][$eq]=${formData.student_email}&filters[student_password][$eq]=${formData.student_password}`);
+        console.log(data);
 
-    const data =
-      JSON.stringify({
-        data: formData
-      });
-
-
-    const response = await createData(
-      {
-        url: "students",
-        data: data
-      });
-    if (response &&
-      response.attributes &&
-      response.attributes.student_name == formData.student_name) {
-        Swal.fire({
-          icon: "success",
-          title: "Data has been saved",
-          showConfirmButton: false,
-          timer: 1500
-        });
-        
-        setFormData({
-          student_name: "",
-          student_class: "",
-          student_roll: "",
-        });
-    
-
+        if(data.length > 0) {
+            Swal.fire({
+                icon: 'success',
+                title: 'Login Successfull',
+              })
+        }else{
+          Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Something went wrong!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          })
+        }
     }
+  
+
+   
+
+
 
 
   };
@@ -61,7 +54,7 @@ export default function SignIn() {
               </label>
               <input
                 type="email"
-                email="student_email"
+                name="student_email"
                 className="form-control"
                 id="email"
                 value={formData.student_email}
@@ -79,7 +72,7 @@ export default function SignIn() {
               </label>
               <input
                 type="password"
-                password="student_password"
+                name="student_password"
                 className="form-control"
                 id="password"
                 value={formData.student_password}

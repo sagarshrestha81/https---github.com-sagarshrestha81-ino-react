@@ -38,16 +38,7 @@ export default function SignUp() {
           showConfirmButton: false,
           timer: 1500
         });
-        navigator("/sign-in");
-        
-        // setFormData({
-        //   student_name: "",
-        //   student_class: "",
-        //   student_roll: "",
-        //   student_email: "",
-        //   student_password: "",
-        // });
-    
+        navigator("/sign-in");          
 
     }
 
