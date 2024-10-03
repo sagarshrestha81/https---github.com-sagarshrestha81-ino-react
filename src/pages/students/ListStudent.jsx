@@ -18,30 +18,29 @@ export default function ListStudent() {
   };
 
   const deleteStudent = async (id) => {
-    
-    
+
     Swal.fire({
-      icon:"warning",
+      icon: "warning",
       title: "Do you want to Delete?",
       showDenyButton: true,
       showCancelButton: false,
       confirmButtonText: "Yes",
       denyButtonText: `No`,
-    }).then( async (result) => {
+    }).then(async (result) => {
       /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
-         const data = await deleteData(`students/${id}`);
-    if (data && data.id == id) {
-      Swal.fire({
-        icon: "success",
-        title: `${data.attributes.student_name} data has been deleted `,
-        showConfirmButton: false,
-        timer: 1500,
-      });
-      getListStudents();
-    }
+        const data = await deleteData(`students/${id}`);
+        if (data && data.id == id) {
+          Swal.fire({
+            icon: "success",
+            title: `${data.attributes.student_name} data has been deleted `,
+            showConfirmButton: false,
+            timer: 1500,
+          });
+          getListStudents();
+        }
       } else if (result.isDenied) {
- 
+
         Swal.fire({
           icon: "info",
           title: "Changes are not saved",
@@ -51,7 +50,7 @@ export default function ListStudent() {
       }
     });
 
-  
+
   };
 
   useEffect(() => {

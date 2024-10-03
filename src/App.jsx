@@ -19,6 +19,8 @@ import ListStudent from './pages/students/ListStudent';
 import SingleStudent from './pages/students/SingleStudent';
 import CreateStudent from './pages/students/CreateStudent';
 import EditStudent from "./pages/students/EditStudent";
+import SignIn from "./pages/auth/SignIn";
+import SignUp from "./pages/auth/SignUp";
 function App() {
   return (
     <>
@@ -26,6 +28,8 @@ function App() {
         <Sidebar />
 
         <Routes>
+          <Route path="/sign-up" element={<SignUp />}/>
+          <Route path="/sign-in" element={<SignIn />}/>
           <Route path="/" element={<Homepage />}/>
           <Route path="/contact" element={<Contact />}/>
           <Route path="/about" element={<AboutPage />}/>       
